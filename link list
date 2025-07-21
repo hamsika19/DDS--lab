@@ -7,7 +7,7 @@
      };
      Node* head = NULL;
      
-     void insertEnd(int num){
+_     void insertEnd(int num){
          Node* newNode = new Node();
          newNode->data = num;
          newNode->next = NULL;
@@ -38,3 +38,122 @@ OUTPUT:-
 20inserted
 30inserted
 40inserted
+
+_____________________________________
+#include <iostream>
+    using namespace std;
+     
+     struct Node{
+         int data;
+         Node* next;
+     };
+     Node* head = NULL;
+     
+_     void insertStart(int num){
+         Node* newNode = new Node();
+         newNode->data = num;
+         newNode->next = head;
+         
+         head = newNode;
+             cout<<num<<"inserted at start"<<endl;
+         }
+         
+         
+_         void insertEnd(int num){
+         Node* newNode = new Node();
+         newNode->data = num;
+         newNode->next = NULL;
+         
+         if(head==NULL){
+             head = newNode;
+             cout<<num<<"inserted"<<endl;
+         }
+         else{
+             Node* temp = head;
+             while(temp->next !=NULL){
+                 temp = temp->next;
+             }
+             temp->next = newNode;
+             cout<<num<<"inserted"<<endl;
+         }
+         }
+         
+         int main(){
+             insertEnd(10);
+             insertEnd(5);
+             insertEnd(6);
+             insertStart(3); 
+             insertStart(4);
+         }
+
+ OUTPUT:-        
+10inserted
+5inserted
+6inserted
+3inserted at start
+4inserted at start
+
+____________________________________________________________
+#include <iostream>
+    using namespace std;
+     
+     struct Node{
+         int data;
+         Node* next;
+     };
+     Node* head = NULL;
+     
+_     void Traverse(){
+          Node* temp = head;
+          while (temp!= NULL){
+          cout<<temp->data<<"-->";
+           temp = temp->next;
+              }
+                  cout<<"NULL";
+                }
+
+_     void insertStart(int num){
+         Node* newNode = new Node();
+         newNode->data = num;
+         newNode->next = head;
+         
+         head = newNode;
+             cout<<num<<"inserted at start"<<endl;
+         }
+         
+         
+_         void insertEnd(int num){
+         Node* newNode = new Node();
+         newNode->data = num;
+         newNode->next = NULL;
+         
+         if(head==NULL){
+             head = newNode;
+             cout<<num<<"inserted"<<endl;
+         }
+         else{
+             Node* temp = head;
+             while(temp->next !=NULL){
+                 temp = temp->next;
+             }
+             temp->next = newNode;
+             cout<<num<<"inserted"<<endl;
+         }
+         }
+         
+         int main(){
+             insertEnd(10);
+             insertEnd(5);
+             insertEnd(6);
+             insertStart(3); 
+             insertStart(4);
+             Traverse();
+         }
+
+OUTPUT:-
+10inserted
+5inserted
+6inserted
+3inserted at start
+4inserted at start
+4-->3-->10-->5-->6-->NULL
